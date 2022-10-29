@@ -9,9 +9,10 @@ See here:
 <!-- MarkdownTOC -->
 
 - Developer Setup
-- Local Package: `pandas_demos`
+- Local Package: `plotly_dash_demos`
 - Testing
   - Unit-Tests
+  - Demo Tests
 - License \(Copyright\)
 
 <!-- /MarkdownTOC -->
@@ -28,7 +29,7 @@ See here:
 1. `pip install poetry` -- Assumes `poetry >= 1.20.0`
 1. `poetry install`
 
-## Local Package: `pandas_demos`
+## Local Package: `plotly_dash_demos`
 
 > TBD
 
@@ -68,6 +69,14 @@ TOTAL                               0      0   100%
 
 ========================================= no tests ran in 0.01s ==========================================
 ````
+
+### Demo Tests
+
+These demos are larger "functional tests" that are actually localized demonstrations of `plotly` and `dash` functionality which can be tested, edited, or run here in-place.
+
+Some of these may not rely on the local `plotly_dash_demos` package, and may be fully self-contained.
+
+See the local [README.md](./tests_demo/README.md) for more details on what demos are currently available, and how to run them.
 
 ## License (Copyright)
 
