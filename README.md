@@ -57,23 +57,20 @@ This should produce an output that looks like:
 ```bash
 ========================================== test session starts ===========================================
 platform darwin -- Python 3.10.7, pytest-7.2.0, pluggy-1.0.0
-rootdir: /Users/tommy/dev/tommypkeane/pandas_demos, configfile: pyproject.toml, testpaths: tests_unit
-plugins: hypothesis-6.56.3, cov-4.0.0
-collected 1 item
-
-tests_unit/pandas_demos/test_dataframe_examples.py .
+rootdir: /Users/tommy/dev/tommypkeane/plotly-dash_demos, configfile: pyproject.toml, testpaths: tests_unit
+plugins: hypothesis-6.56.3, dash-2.6.2, cov-4.0.0
+collected 0 items
+/Users/tommy/dev/tommypkeane/plotly-dash_demos/.direnv/python-3.10.7/lib/python3.10/site-packages/coverage/control.py:801: CoverageWarning: No data was collected. (no-data-collected)
+  self._warn("No data was collected.", slug="no-data-collected")
 
 ---------- coverage: platform darwin, python 3.10.7-final-0 ----------
-Name                                         Stmts   Miss  Cover
-----------------------------------------------------------------
-pandas_demos/__init__.py                         0      0   100%
-pandas_demos/dataframe_examples.py               2      0   100%
-pandas_demos/dataframe_groupby_examples.py       0      0   100%
-pandas_demos/series_examples.py                  0      0   100%
-----------------------------------------------------------------
-TOTAL                                            2      0   100%
+Name                            Stmts   Miss  Cover
+---------------------------------------------------
+plotly_dash_demos/__init__.py       0      0   100%
+---------------------------------------------------
+TOTAL                               0      0   100%
 
-=========================================== 1 passed in 0.27s ============================================
+========================================= no tests ran in 0.01s ==========================================
 ````
 
 ## License (Copyright)
