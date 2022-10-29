@@ -11,33 +11,35 @@ import pandas
 import plotly.express
 from dash import Dash, dcc, html
 
-warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-dash_app = Dash(__name__)
+dash_app = None
+
+with warnings.catch_warnings():
+    warnings.filterwarnings("ignore", category=DeprecationWarning)
+    dash_app = Dash(__name__)
 
 module_logs = logging.getLogger(__name__)
 
-bargraph_df = pandas.DataFrame(
-    {
-        "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
-        "Amount": [4, 1, 2, 2, 4, 5],
-        "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"],
-    },
-)
+us_cities = pandas.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/us-cities-top-1k.csv")
 
-fig = plotly.express.bar(
-    bargraph_df,
-    x="Fruit",
-    y="Amount",
-    color="City",
-    barmode="group",
+fig = plotly.express.scatter_mapbox(
+    us_cities,
+    lat="lat",
+    lon="lon",
+    hover_name="City",
+    hover_data=["State", "Population"],
+    color_discrete_sequence=["fuchsia"],
+    zoom=3,
+    height=300,
 )
+fig.update_layout(mapbox_style="open-street-map")
+fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 dash_app.layout = html.Div(
     children=[
         html.H1(children="👋 Hello Dash"),
-        html.Div(children="⚡️ Dash: A web application framework for your data."),
-        dcc.Graph(id="city-fruits-bar", figure=fig),
+        html.Div(children="⚡️ Top 1,000 US Cities by Census Population"),
+        dcc.Graph(id="us-cities-data", figure=fig),
     ],
 )
 

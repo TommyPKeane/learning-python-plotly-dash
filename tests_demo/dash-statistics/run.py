@@ -11,9 +11,12 @@ import pandas
 import plotly.express
 from dash import Dash, dcc, html
 
-warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-dash_app = Dash(__name__)
+dash_app = None
+
+with warnings.catch_warnings():
+    warnings.filterwarnings("ignore", category=DeprecationWarning)
+    dash_app = Dash(__name__)
 
 module_logs = logging.getLogger(__name__)
 
