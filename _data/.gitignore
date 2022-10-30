@@ -1,2 +1,7 @@
 **/*
 !.gitignore
+
+# Data Files to Unignore
+# ---
+!plotly_sankey_energy.json
+# ---
