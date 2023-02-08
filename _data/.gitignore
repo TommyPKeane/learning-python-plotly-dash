@@ -3,5 +3,6 @@
 
 # Data Files to Unignore
 # ---
+!appl_2020-2022_financial.json
 !plotly_sankey_energy.json
 # ---

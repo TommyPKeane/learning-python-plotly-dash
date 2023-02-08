@@ -1,0 +1,100 @@
+{
+    "node": [
+        {
+            "label": "Product Sales 2021",
+            "color": ""
+        },
+        {
+            "label": "Services Sales 2021",
+            "color": ""
+        },
+        {
+            "label": "Net Sales 2021",
+            "color": ""
+        },
+        {
+            "label": "Sales Costs 2021",
+            "color": ""
+        },
+        {
+            "label": "Operating Costs 2021",
+            "color": ""
+        },
+        {
+            "label": "Profit 2021",
+            "color": ""
+        },
+        {
+            "label": "Product Sales 2022",
+            "color": ""
+        },
+        {
+            "label": "Services Sales 2022",
+            "color": ""
+        },
+        {
+            "label": "Net Sales 2022",
+            "color": ""
+        },
+        {
+            "label": "Product Sales Costs 2021",
+            "color": ""
+        },
+        {
+            "label": "Services Sales Costs 2021",
+            "color": ""
+        },
+        {
+            "label": "R&D Operating Costs 2021",
+            "color": ""
+        },
+        {
+            "label": "Other Operating Costs 2021",
+            "color": ""
+        },
+    ],
+    "link": [
+        {
+            "label": "2020-2021 (FY)",
+            "color": "",
+            "value": 297392000000,
+            "source": 0,
+            "target": 2,
+        },
+        {
+            "label": "2020-2021 (FY)",
+            "color": "",
+            "value": 68425000000,
+            "source": 1,
+            "target": 2,
+        },
+        {
+            "label": "Product Sales Costs 2020-2021 (FY)",
+            "color": "",
+            "value": 192266000000,
+            "source": 2,
+            "target": 3,
+        },
+        {
+            "label": "Services Sales Costs 2020-2021 (FY)",
+            "color": "",
+            "value": 20715000000,
+            "source": 2,
+            "target": 3,
+        },
+        {
+            "label": "R&D Operating Costs 2020-2021 (FY)",
+            "color": "",
+            "value": 21914000000,
+            "source": 2,
+            "target": 4,
+        },
+        {
+            "label": "Other Operating Costs 2020-2021 (FY)",
+            "color": "",
+            "value": 21973000000,
+            "source": 2,
+            "target": 4,
+        },
+    ]
+}
