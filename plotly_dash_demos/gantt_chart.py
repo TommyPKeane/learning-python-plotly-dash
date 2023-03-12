@@ -1,5 +1,25 @@
+# Example Gantt Chart Class for Job Seeking
+#
+# Expected CSV File Headers and Data Types:
+#
+# - "company": `str`
+# - "role": `str`
+# - "job category": `str` (Standardized)
+# - "job listing url": `str` (URL)
+# - "application date": `str` (ISO Date)
+# - "status": `str` (Standardized)
+# - "last-checked date": `str` (ISO Date)
+# - "first contact date": `str` (ISO Date)
+# - "number of interviews": `int`
+# - "final response": `str` (Standardized)
+# - "final response date": `str` (ISO Date)
+#
 import pandas
 import plotly.express
+
+
+default_date_beg = "2023-02-01"
+default_date_end = "2023-03-15"
 
 
 def create_jobseeking_dataframe_from_csv(
@@ -13,18 +33,19 @@ def create_jobseeking_dataframe_from_csv(
         **{
             "Company": tmp_df["company"],
             "Role": tmp_df["role"],
+            "CommonRole": tmp_df["job category"],
             # "URL": tmp_df["job listing url"],
             "ApplicationDate": tmp_df["application date"],
             "ApplicationStatus": tmp_df["status"],
             # "": tmp_df["last-checked date"],
-            "FirstContact": tmp_df["first contact date"],
-            "NumberOfInterviews": tmp_df["number of interviews"],
+            # "FirstContact": tmp_df["first contact date"],
+            # "NumberOfInterviews": tmp_df["number of interviews"],
             "Outcome": tmp_df["final response"],
             "LastContact": tmp_df["final response date"],
         },
     )
     jobsearch_df["LastContact"].fillna(
-        value="2023-02-09",
+        value=default_date_end,
         inplace=True,
     )
     jobsearch_df["Outcome"].fillna(
@@ -48,27 +69,7 @@ class GanttJobSeeking():
         "Rejected": "#B31B1B", # (0.70, 0.11, 0.11, 1.00),  # Carnelian
         "No Contact": "#915C83", # (0.57, 0.36, 0.51, 1.00),  # Antique fuchsia
     }
-    x_daterange = (
-        # "2022-10-16",
-        # "2022-10-23",
-        # "2022-10-30",
-        # "2022-11-06",
-        # "2022-11-13",
-        # "2022-11-20",
-        # "2022-11-27",
-        # "2022-12-04",
-        # "2022-12-11",
-        # "2022-12-18",
-        # "2022-12-25",
-        "2023-01-01",
-        # "2023-01-08",
-        # "2023-01-15",
-        # "2023-01-22",
-        # "2023-01-29",
-        # "2023-02-05",
-        # "2023-02-12",
-        "2023-02-19",
-    )
+    x_daterange = (default_date_beg, default_date_end)
 
     def __init__(
         self,
