@@ -4,5 +4,7 @@
 # Data Files to Unignore
 # ---
 !appl_2020-2022_financial.json
+!jobsearch_applications_example.csv
+!jobsearch_interviews_example.csv
 !plotly_sankey_energy.json
 # ---
