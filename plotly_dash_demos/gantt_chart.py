@@ -24,6 +24,7 @@ default_date_end = "2023-03-15"
 
 def create_jobseeking_dataframe_from_csv(
     csv_filename,
+    nan_lastcontact_date=default_date_end,
 ):
     tmp_df = pandas.read_csv(
         csv_filename,
@@ -38,14 +39,14 @@ def create_jobseeking_dataframe_from_csv(
             "ApplicationDate": tmp_df["application date"],
             "ApplicationStatus": tmp_df["status"],
             # "": tmp_df["last-checked date"],
-            # "FirstContact": tmp_df["first contact date"],
-            # "NumberOfInterviews": tmp_df["number of interviews"],
+            "FirstContact": tmp_df["first contact date"],
+            "NumberOfInterviews": tmp_df["number of interviews"],
             "Outcome": tmp_df["final response"],
             "LastContact": tmp_df["final response date"],
         },
     )
     jobsearch_df["LastContact"].fillna(
-        value=default_date_end,
+        value=nan_lastcontact_date,
         inplace=True,
     )
     jobsearch_df["Outcome"].fillna(
